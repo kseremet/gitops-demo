@@ -44,11 +44,11 @@ spec:
             - disk:
                 bus: virtio
               name: rootdisk
-              bootOrder: 2
+              bootOrder: 1
             - cdrom:
                 bus: sata
               name: discovery-iso
-              bootOrder: 1
+              bootOrder: 2
           interfaces:
             - bridge: {}
               macAddress: '02:a4:1a:00:00:77'
@@ -56,13 +56,6 @@ spec:
               name: default
           networkInterfaceMultiqueue: true
           rng: {}
-        features:
-          acpi: {}
-          smm:
-            enabled: true
-        firmware:
-          bootloader:
-            efi: {}
         machine:
           type: pc-q35-rhel9.2.0
         memory:
@@ -79,5 +72,5 @@ spec:
           name: rootdisk
         - name: discovery-iso
           persistentVolumeClaim:
-            claimName: discovery2.iso
+            claimName: discovery.iso
 
