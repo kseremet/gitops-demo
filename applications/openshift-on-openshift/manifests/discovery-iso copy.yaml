@@ -10,6 +10,7 @@ spec:
       url: "http://distro.ibiblio.org/tinycorelinux/9.x/x86/release/Core-current.iso"
   pvc:
     volumeMode: Filesystem
+    storageClassName: ocs-storagecluster-cephfs
     accessModes:
       - ReadWriteMany
     resources:
