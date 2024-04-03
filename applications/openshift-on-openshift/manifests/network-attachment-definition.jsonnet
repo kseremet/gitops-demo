@@ -7,12 +7,12 @@ local namespace = std.extVar('namespace');
     "name": "localnet-172-16-103"
   },
   "spec": {
-    "config": {
+    "config": std.toString({
       "cniVersion": "0.3.1",
       "name": "localnet-172.16.103",
       "type": "ovn-k8s-cni-overlay",
       "topology": "localnet",
       "netAttachDefName": namespace + "/localnet-172-16-103"
-    }
+    })
   }
 }
