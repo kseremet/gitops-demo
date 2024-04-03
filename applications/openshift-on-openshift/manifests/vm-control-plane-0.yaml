@@ -1,10 +1,11 @@
 ﻿apiVersion: kubevirt.io/v1
 kind: VirtualMachine
 metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "80"
   labels:
     app: control-plane-0
   name: control-plane-0
-  namespace: koray
 spec:
   dataVolumeTemplates:
     - apiVersion: cdi.kubevirt.io/v1beta1
