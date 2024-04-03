@@ -79,5 +79,5 @@ spec:
           name: rootdisk
         - name: discovery-iso
           persistentVolumeClaim:
-            claimName: discovery.iso
+            claimName: discovery2.iso
 
