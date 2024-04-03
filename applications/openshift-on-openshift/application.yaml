@@ -11,6 +11,11 @@ spec:
     repoURL: https://gitea.apps.openshift.demoes.live/demo-user/gitops-demo.git
     path: applications/openshift-on-openshift/manifests
     targetRevision: HEAD
+    directory:
+      jsonnet:
+        extVars:
+        - name: namespace
+          value: default
   syncPolicy:
     automated:
       prune: false
