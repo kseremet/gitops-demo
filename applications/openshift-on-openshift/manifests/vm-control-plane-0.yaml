@@ -44,9 +44,11 @@ spec:
             - disk:
                 bus: virtio
               name: rootdisk
+              bootOrder: 2
             - cdrom:
                 bus: sata
               name: discovery-iso
+              bootOrder: 1
           interfaces:
             - bridge: {}
               macAddress: '02:a4:1a:00:00:77'
