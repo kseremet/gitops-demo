@@ -7,7 +7,7 @@ local namespace = std.extVar('namespace');
     "name": "localnet-vlan150"
   },
   "spec": {
-    "config": std.escapeStringJson(std.toString({
+    "config": std.toString({
       "cniVersion": "0.3.1",
       "name": "localnet-vlan150",
       "type": "ovn-k8s-cni-overlay",
@@ -15,6 +15,6 @@ local namespace = std.extVar('namespace');
       "vlanID": 150,
       "mtu": 1500,
       "netAttachDefName": namespace + "/localnet-vlan150"
-    }))
+    })
   }
 }
