@@ -13,6 +13,7 @@ local namespace = std.extVar('namespace');
       "type": "ovn-k8s-cni-overlay",
       "topology": "localnet",
       "vlanID": 150,
+      "mtu": 1500,
       "netAttachDefName": namespace + "/localnet-vlan150"
     })
   }
