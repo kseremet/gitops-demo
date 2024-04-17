@@ -63,7 +63,7 @@ spec:
         resources: {}
       networks:
         - multus:
-            networkName: localnet-172-16-103
+            networkName: localnet-vlan150
           name: default
       terminationGracePeriodSeconds: 180
       volumes:
