@@ -51,7 +51,6 @@ spec:
               bootOrder: 2
           interfaces:
             - bridge: {}
-              macAddress: '02:a4:1a:00:00:77'
               model: virtio
               name: default
           networkInterfaceMultiqueue: true
