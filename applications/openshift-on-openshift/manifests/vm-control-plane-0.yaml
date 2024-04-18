@@ -36,7 +36,7 @@ spec:
       architecture: amd64
       domain:
         cpu:
-          cores: 8
+          cores: 4
           sockets: 1
           threads: 1
         devices:
@@ -58,7 +58,7 @@ spec:
         machine:
           type: pc-q35-rhel9.2.0
         memory:
-          guest: 8Gi
+          guest: 16Gi
         resources: {}
       networks:
         - multus:
