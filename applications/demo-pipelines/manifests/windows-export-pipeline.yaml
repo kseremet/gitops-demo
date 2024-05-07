@@ -83,6 +83,10 @@ spec:
     description: Name of the PVC Name to use as the base image
     name: sourcePersistentVolumeClaimName
     type: string
+  - default: openshift-virtualization-os-images
+    description: Name of the PVC Name to use as the base image
+    name: sourcePersistentVolumeClaimNamespace
+    type: string
   - default: 32Gi
     description: Size of the bootable Data Volume
     name: dataVolumeSize
@@ -135,13 +139,29 @@ spec:
       value: "true"
     - name: datavolumeTemplates
       value:
-      - "{\n  \"apiVersion\": \"cdi.kubevirt.io/v1beta1\",\n  \"kind\": \"DataVolume\",\n
-        \ \"metadata\": {\n      \"name\": \"${NAME}\"\n  },\n  \"spec\": {\n    \"storage\":
-        {\n      \"resources\": {\n        \"requests\": {\n          \"storage\":
-        \"$(params.dataVolumeSize)\"\n        }\n      } \n    },\n    \"source\":
-        {\n      \"pvc\": {\n        \"name\": \"$(params.sourcePersistentVolumeClaimName)\",\n
-        \        \"namespace\": \"$(tasks.copy-template-customize.results.namespace)\"\n
-        \      }\n    }\n  }\n}\n"
+        - |
+          {
+            "apiVersion": "cdi.kubevirt.io/v1beta1",
+            "kind": "DataVolume",
+            "metadata": {
+                "name": "${NAME}"
+            },
+            "spec": {
+              "storage": {
+                "resources": {
+                  "requests": {
+                    "storage": "$(params.dataVolumeSize)"
+                  }
+                } 
+              },
+              "source": {
+                "pvc": {
+                  "name": "$(params.sourcePersistentVolumeClaimName)",
+                    "namespace": "$(params.sourcePersistentVolumeClaimNamespace)"
+                  }
+              }
+            }
+          }
     - name: disks
       value:
       - '{"name": "rootdisk", "disk": {"bus": "virtio"}}'
