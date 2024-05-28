@@ -3,18 +3,24 @@ kind: ApplicationSet
 metadata:
   name: demo-dr-volsync
 spec:
+  goTemplate: true
+  goTemplateOptions: ["missingkey=error"]
   generators:
   - clusters:
       selector:
-        matchLabels:
-          cluster.kubernetes.io/cluster-name: "(cls1|cls2)" 
+        matchExpressions:
+          - key: cluster.kubernetes.io/cluster-name
+            operator: In
+            values:
+              - cls1
+              - cls2
   template:
     metadata:
-      name: "{{.name}}-demo-dr-volsync"
+      name: '{{.name}}-demo-dr-volsync'
     spec:
       project: default
       source:
-        path: "applicationsets/demo-dr-volsync/manifests/{{.name}}"
+        path: 'applicationsets/demo-dr-volsync/manifests/{{.name}}'
         repoURL: https://gitea.apps.openshift.demoes.live/demo-user/gitops-demo.git
       syncPolicy:
         automated:
@@ -23,5 +29,5 @@ spec:
         syncOptions:
         - CreateNamespace=true
       destination:
-        server: "{{.server}}"
+        server: '{{.server}}'
         namespace: demo-vm-dr-volsync

@@ -8,5 +8,5 @@ metadata:
     argocd.argoproj.io/sync-wave: "59"
     skupper.io/address: fedora-demo-vm-replication-dest
     skupper.io/target: volsync-rsync-tls-dst-fedora-demo-vm-replication-dest
-    skupper.io/port: 8000
+    skupper.io/port: "8000"
     skupper.io/proxy: tcp
