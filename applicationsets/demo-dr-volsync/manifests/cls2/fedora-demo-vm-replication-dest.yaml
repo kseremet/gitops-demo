@@ -1,0 +1,15 @@
+apiVersion: volsync.backube/v1alpha1
+kind: ReplicationDestination
+metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "49"
+  name: fedora-demo-vm-replication-dest
+  namespace: demo-vm-dr-volsync
+spec:
+  rsyncTLS:
+    copyMethod: Snapshot
+    destinationPVC: fedora-demo-vm
+    keySecret: tls-key-secret-fedora-demo-vm
+    serviceType: ClusterIP
+    storageClassName: lvms-vg1
+    volumeSnapshotClassName: lvms-vg1

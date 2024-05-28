@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: demo-dr-volsync
+spec:
+  generators:
+  - clusters:
+      selector:
+        matchLabels:
+          cluster.kubernetes.io/cluster-name: "(cls1|cls2)" 
+  template:
+    metadata:
+      name: "{{.name}}-demo-dr-volsync"
+    spec:
+      project: default
+      source:
+        path: "applicationsets/demo-dr-volsync/manifests/{{.name}}"
+        repoURL: https://gitea.apps.openshift.demoes.live/demo-user/gitops-demo.git
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: false
+        syncOptions:
+        - CreateNamespace=true
+      destination:
+        server: "{{.server}}"
+        namespace: demo-vm-dr-volsync
