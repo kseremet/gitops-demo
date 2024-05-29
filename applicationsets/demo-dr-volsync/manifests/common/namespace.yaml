@@ -1,8 +1,0 @@
-apiVersion: v1
-kind: Namespace
-metadata:
-  annotations:
-    openshift.io/description: Demo Project - VM Disaster Recovery using VolSync
-    openshift.io/display-name: Demo Project - VM Disaster Recovery using VolSync
-    argocd.argoproj.io/sync-wave: "1"
-  name: demo-vm-dr-volsync
