@@ -4,7 +4,6 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "59"
   name: fedora-demo-vm-replication-src
-  namespace: demo-vm-dr-volsync
 spec:
   sourcePVC: fedora-demo-vm
   trigger:

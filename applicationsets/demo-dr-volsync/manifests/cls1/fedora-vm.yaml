@@ -2,7 +2,6 @@ apiVersion: kubevirt.io/v1
 kind: VirtualMachine
 metadata:
   name: fedora-demo-vm
-  namespace: demo-vm-dr-volsync
   labels:
     app: fedora-demo-vm
   annotations:

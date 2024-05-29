@@ -4,7 +4,6 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "19"
   name: skupper-site
-  namespace: demo-vm-dr-volsync
 data:
   console: "true"
   console-user: admin

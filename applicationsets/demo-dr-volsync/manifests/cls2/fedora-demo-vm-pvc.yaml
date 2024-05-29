@@ -4,7 +4,6 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "29"
   name: fedora-demo-vm
-  namespace: demo-vm-dr-volsync
 spec:
   accessModes:
   - ReadWriteOnce
