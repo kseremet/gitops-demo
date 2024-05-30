@@ -27,6 +27,12 @@ spec:
           selfHeal: false
         syncOptions:
         - CreateNamespace=true
+        - RespectIgnoreDifferences=true
       destination:
         server: '{{.server}}'
         namespace: demo-oadp-backup-restore
+      ignoreDifferences:
+      - group: "objectbucket.io"
+        kind: "ObjectBucketClaim"
+        jsonPointers:
+        - /spec/objectBucketName
