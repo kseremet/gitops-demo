@@ -1,0 +1,10 @@
+apiVersion: velero.io/v1
+kind: Backup
+metadata:
+  name: demo-oadp-backup-1
+spec:
+  includedNamespaces:
+  - demo-oadp-backup-restore
+  snapshotVolumes: true
+  storageLocation: demo-oadp-dpa-1
+  ttl: 720h0m0s
