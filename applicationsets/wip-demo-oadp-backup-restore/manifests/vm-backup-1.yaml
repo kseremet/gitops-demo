@@ -8,3 +8,5 @@ spec:
   snapshotVolumes: true
   storageLocation: demo-oadp-dpa-1
   ttl: 720h0m0s
+  defaultVolumesToFsBackup: false
+  snapshotMoveData: true
