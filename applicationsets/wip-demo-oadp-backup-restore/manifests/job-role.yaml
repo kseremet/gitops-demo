@@ -7,4 +7,4 @@ metadata:
 rules:
 - apiGroups: [""]
   resources: ["secrets"]
-  verbs: ["create", "delete", "get", "list", "watch"]
+  verbs: ["create", "delete", "patch", "get", "list", "watch"]
