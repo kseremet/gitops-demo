@@ -7,6 +7,7 @@ spec:
   - demo-oadp-backup-vms
   includedResources:
   - virtualmachines.kubevirt.io
+  - virtualmachineinstances.kubevirt.io
   snapshotVolumes: true
   storageLocation: demo-oadp-dpa-1
   ttl: 720h0m0s
