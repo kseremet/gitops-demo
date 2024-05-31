@@ -10,6 +10,7 @@ spec:
   - virtualmachineinstances.kubevirt.io
   - datavolumes.cdi.kubevirt.io
   - persistentvolumeclaims
+  - pods
   snapshotVolumes: true
   storageLocation: demo-oadp-dpa-1
   ttl: 720h0m0s
