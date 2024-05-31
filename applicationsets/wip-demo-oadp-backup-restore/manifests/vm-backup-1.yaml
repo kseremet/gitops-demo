@@ -8,6 +8,8 @@ spec:
   includedResources:
   - virtualmachines.kubevirt.io
   - virtualmachineinstances.kubevirt.io
+  - datavolumes.cdi.kubevirt.io
+  - persistentvolumeclaims
   snapshotVolumes: true
   storageLocation: demo-oadp-dpa-1
   ttl: 720h0m0s
