@@ -2,6 +2,7 @@ apiVersion: kubevirt.io/v1
 kind: VirtualMachine
 metadata:
   name: fedora-demo-vm
+  namespace: demo-oadp-backup-vms
   labels:
     app: fedora-demo-vm
   annotations:

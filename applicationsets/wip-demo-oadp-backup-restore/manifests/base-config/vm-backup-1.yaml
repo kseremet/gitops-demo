@@ -4,7 +4,7 @@ metadata:
   name: demo-oadp-backup-1
 spec:
   includedNamespaces:
-  - demo-oadp-backup-restore
+  - demo-oadp-backup-vms
   snapshotVolumes: true
   storageLocation: demo-oadp-dpa-1
   ttl: 720h0m0s

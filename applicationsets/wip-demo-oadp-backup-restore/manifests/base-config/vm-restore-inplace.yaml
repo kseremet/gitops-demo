@@ -15,6 +15,4 @@ spec:
     - daemonset.apps
     - replicaset.apps
     - jobs.batch
-  namespaceMapping:
-    demo-oadp-backup-restore: demo-oadp-backup-restore-2
   restorePVs: true
