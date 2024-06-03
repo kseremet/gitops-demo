@@ -4,15 +4,10 @@ metadata:
   name: demo-oadp-restore-1
 spec:
   backupName: demo-oadp-backup-1
-  excludedResources:
-    - nodes
-    - events
-    - events.events.k8s.io
-    - backups.velero.io
-    - restores.velero.io
-    - resticrepositories.velero.io
-    - deployments.apps
-    - daemonset.apps
-    - replicaset.apps
-    - jobs.batch
   restorePVs: true
+  includeNamespaces:
+    - demo-oadp-backup-vms
+  includeResources:
+    - virtualmachines.kubevirt.io
+    - datavolumes.cdi.kubevirt.io
+    - persistentvolumeclaims
