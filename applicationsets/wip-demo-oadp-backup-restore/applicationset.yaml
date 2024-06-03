@@ -12,7 +12,7 @@ spec:
           - key: cluster.kubernetes.io/cluster-name
             operator: In
             values:
-              - cls1
+              - lab
   template:
     metadata:
       name: '{{.name}}-demo-oadp-backup-restore'
