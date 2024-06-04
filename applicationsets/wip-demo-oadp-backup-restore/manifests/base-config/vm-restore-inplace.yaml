@@ -5,9 +5,3 @@ metadata:
 spec:
   backupName: demo-oadp-backup-1
   restorePVs: true
-  includeNamespaces:
-    - demo-oadp-backup-vms
-  includeResources:
-    - virtualmachines.kubevirt.io
-    - datavolumes.cdi.kubevirt.io
-    - persistentvolumeclaims
