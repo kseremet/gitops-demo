@@ -5,6 +5,8 @@ metadata:
   namespace: demo-vm-provisioning
   labels:
     app: windows-demo-vm
+  annotations:
+    argocd.argoproj.io/sync-wave: "99"
 spec:
   dataVolumeTemplates:
     - metadata:
