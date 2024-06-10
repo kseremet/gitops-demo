@@ -66,20 +66,6 @@ spec:
                           values:
                             - vmpool-linux
                     topologyKey: topology.kubernetes.io/zone
-          livenessProbe:
-            initialDelaySeconds: 60
-            periodSeconds: 5
-            httpGet:
-              port: 80
-            timeoutSeconds: 3
-          readinessProbe:
-            httpGet:
-              port: 80
-            initialDelaySeconds: 10
-            periodSeconds: 10
-            timeoutSeconds: 3
-            failureThreshold: 60
-            successThreshold: 1
           architecture: amd64
           domain:
             cpu:

@@ -76,7 +76,7 @@ spec:
                   name: cloudinitdisk
                 - disk: {}
                   name: nginx-conf-disk
-                  serial: 06DEMO
+                  serial: 34DEMO
               interfaces:
                 - masquerade: {}
                   model: virtio
@@ -119,7 +119,7 @@ spec:
                   bootcmd:
                     # mount the ConfigMap
                     - "mkdir /mnt/app-config"
-                    - "mount /dev/$(lsblk --nodeps -no name,serial | grep 06DEMO | cut -f1 -d' ') /mnt/app-config"
+                    - "mount /dev/disk/by-id/ata-QEMU_HARDDISK_34DEMO /mnt/app-config"
                   packages:
                     - nginx
                   runcmd:
